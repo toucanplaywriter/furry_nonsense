@@ -11,7 +11,7 @@ def sort_by_artist(src, dest):
     if not os.path.exists(dest):
         os.mkdir(dest)
 
-    for src_file in glob(src + "/*"):
+    for src_file in glob(os.path.join(src, "*")):
         # Check if the filename matches that of an FA download file.
         temp = FA_REGEX.findall(src_file)
 
